@@ -5,22 +5,18 @@
 
 [More screenshots](https://imgur.com/a/FDVRIyw)
 
-### Deploy with Docker compose
+### Changes to Upstream
 
-#### Prerequisites:
- - Docker: [Linux](https://docs.docker.com/install/linux/docker-ce/debian/), [Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac), [Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
- - [Docker-compose](https://docs.docker.com/compose/install/) 
+* Themes are dynamic, no boilerplate code to define them
+* Use much more concise YAML for configuration
+* No custom search providers, duckduckgo as default
+* No hidden promotional / advertising content
 
-#### Install:
+### Install:
 
  - `git clone` this repository
- - Build and bring up with `docker-compose up -d`
- - The page should be available at  `http://localhost:4000` 
-
-To run at a different port open edit docker-compose.yml:
-
-    ports:
-          - 4000:80
+ - `sh server.sh`
+ - The page should be available at  `http://localhost:8000`
 
 ### Customization
 
