@@ -1,0 +1,48 @@
+blackboard:
+  background: '000000'
+  main: 'FFFDEA'
+  accent: '5c5c5c'
+gazette:
+  background: 'F2F7FF'
+  main: '000000'
+  accent: '5c5c5c'
+espresso:
+  background: '21211F'
+  main: 'D1B59A'
+  accent: '4E4E4E'
+cab:
+  background: 'FEED01'
+  main: '1F1F1F'
+  accent: '424242'
+cloud:
+  background: 'f1f2f0'
+  main: '37bbe4'
+  accent: '35342f'
+lime:
+  background: '263238'
+  main: 'aeea00'
+  accent: 'AABBC3'
+passion:
+  background: 'f5f5f5'
+  main: '12005e'
+  accent: '8e24aa'
+blues:
+  background: '2B2C56'
+  main: 'EFF1FC'
+  accent: '6677EB'
+chalk:
+  background: '263238'
+  main: 'AABBC3'
+  accent: 'FF869A'
+tron:
+  background: '242B33'
+  main: 'EFFBFF'
+  accent: '6EE2FF'
+paper:
+  background: 'F8F6F1'
+  main: '4C432E'
+  accent: 'F5E1A4'
+empire:
+  background: '301934'
+  main: 'e5e4e2'
+  accent: 'ffd700'

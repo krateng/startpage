@@ -1,3 +1,5 @@
+const loadeddata = {}
+
 function fetchAndRender (name) {
     fetch(name + '.json')
         .then(response => response.json())
@@ -6,10 +8,12 @@ function fetchAndRender (name) {
             const mytemplate = Handlebars.compile(mysource);
             const myresult = mytemplate(data);
             document.getElementById(name).innerHTML = myresult;
+						loadeddata[name] = data
         });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndRender('apps');
     fetchAndRender('links');
+		fetchAndRender('themes');
 });
