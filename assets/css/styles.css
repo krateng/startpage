@@ -55,7 +55,7 @@ h1{
 h2{
 	font-size: 16px;
 	height: 30px;
-	
+
 }
 
 h3{
@@ -305,7 +305,7 @@ table a{
 }
 
 #modal>div{
-	background-color: #ffffff;
+	background-color: var(--color-background);
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.25);
 	margin-left: auto;
     margin-right: auto;
@@ -317,7 +317,7 @@ table a{
 }
 
 #modal h1{
-	color: #333333;
+	color: var(--color-text-acc);
 	font-size: 2em;
 }
 
@@ -470,7 +470,7 @@ table a{
 		margin-right: auto;
 		width: 90%;
 	}
-    
+
 	#apps_loop{
 		grid-template-columns: 1fr 1fr 1fr;
 		width: 100vw;
@@ -539,7 +539,7 @@ table a{
 		font-size: 2em;
 		line-height: 2.5rem;
 	}
-    
+
 	#links_loop{
 		display: grid;
 		flex-wrap: nowrap;
