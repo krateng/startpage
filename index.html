@@ -25,18 +25,13 @@
             <h2>Color themes</h2>
 
             <div id="modal-theme">
-                <button data-theme="blackboard" class="theme-button theme-blackboard">Blackboard</button>
-                <button data-theme="gazette" class="theme-button theme-gazette">Gazette</button>
-                <button data-theme="espresso" class="theme-button theme-espresso">Espresso</button>
-                <button data-theme="cab" class="theme-button theme-cab">Cab</button>
-                <button data-theme="cloud" class="theme-button theme-cloud">Cloud</button>
-                <button data-theme="lime" class="theme-button theme-lime">Lime</button>
-                <button data-theme="passion" class="theme-button theme-passion">Passion</button>
-                <button data-theme="blues" class="theme-button theme-blues">Blues</button>
-                <button data-theme="chalk" class="theme-button theme-chalk">Chalk</button>
-                <button data-theme="tron" class="theme-button theme-tron">Tron</button>
-                <button data-theme="paper" class="theme-button theme-paper">Paper</button>
-                <button data-theme="empire" class="theme-button theme-empire">Empire</button>
+								 <section id="themes">
+								 <script type="text/handlebars-template" id="themes-template">
+								 		{{#themes}}
+								 		<button data-theme="{{name}}" class="theme-button theme-{{name}}">{{name}}</button>
+										{{/themes}}
+								 </script>
+							 </section>
             </div>
 
 
