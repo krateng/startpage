@@ -28,7 +28,11 @@
 								 <section id="themes">
 								 <script type="text/handlebars-template" id="themes-template">
 								 		{{#themes}}
-								 		<button data-theme="{{name}}" class="theme-button theme-{{name}}">{{name}}</button>
+								 		<button
+											data-theme="{{name}}"
+											class="theme-button theme-{{name}}"
+											style="background-color:{{background}}; border-color:{{accent}}; color:{{main}};"
+											onclick="setThemeTo('{{name}}')">{{name}}</button>
 										{{/themes}}
 								 </script>
 							 </section>

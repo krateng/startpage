@@ -8,7 +8,7 @@ function fetchAndRender (name) {
             const mytemplate = Handlebars.compile(mysource);
             const myresult = mytemplate(data);
             document.getElementById(name).innerHTML = myresult;
-						loadeddata[name] = data
+						loadeddata[name] = data[name]
         });
 }
 
