@@ -29,10 +29,10 @@
 								 <script type="text/handlebars-template" id="themes-template">
 								 		{{#themes}}
 								 		<button
-											data-theme="{{name}}"
-											class="theme-button theme-{{name}}"
+											data-theme="{{identifier}}"
+											class="theme-button theme-{{identifier}}"
 											style="background-color:{{background}}; border-color:{{accent}}; color:{{main}};"
-											onclick="setThemeTo('{{name}}')">{{name}}</button>
+											onclick="setThemeTo('{{identifier}}')">{{identifier}}</button>
 										{{/themes}}
 								 </script>
 							 </section>
@@ -73,16 +73,16 @@
             </script>
         </section>
 
-         <section id="links">
-            <script type="text/handlebars-template" id="links-template">
+         <section id="bookmarks">
+            <script type="text/handlebars-template" id="bookmarks-template">
             <h3>Bookmarks</h3>
             <div id="links_loop">
                 {{#bookmarks}}
                     <div id="links_item">
-                        <h4>{{category}}</h4>
-                        {{#links}}
-                            <a href="{{url}}" class="theme_color-border theme_text-select">{{name}}</a>
-                        {{/links}}
+                        <h4>{{name}}</h4>
+                        {{#bookmarks}}
+                            <a href="{{link}}" class="theme_color-border theme_text-select">{{name}}</a>
+                        {{/bookmarks}}
                     </div>
                 {{/bookmarks}}
             </div>
