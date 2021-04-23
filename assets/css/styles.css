@@ -451,6 +451,12 @@ table a{
     color: #4C432E;
 }
 
+.theme-empire {
+	background-color: #301934;
+	border: 4px solid #ffd700;
+    color: #e5e4e2;
+}
+
 
 /* MEDIA QUERIES */
 

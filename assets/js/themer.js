@@ -101,7 +101,7 @@ for (let i = 0; i < dataThemeButtons.length; i++) {
                     'color-text-acc': '#6EE2FF'
                 });
                 return;
-            
+
             case 'blues':
                 setTheme({
                     'color-background': '#2B2C56',
@@ -109,7 +109,7 @@ for (let i = 0; i < dataThemeButtons.length; i++) {
                     'color-text-acc': '#6677EB'
                 });
                 return;
-            
+
             case 'passion':
                 setTheme({
                     'color-background': '#f5f5f5',
@@ -117,7 +117,7 @@ for (let i = 0; i < dataThemeButtons.length; i++) {
                     'color-text-acc': '#8e24aa'
                 });
                 return;
-            
+
             case 'chalk':
                 setTheme({
                     'color-background': '#263238',
@@ -125,12 +125,20 @@ for (let i = 0; i < dataThemeButtons.length; i++) {
                     'color-text-acc': '#FF869A'
                 });
                 return;
-            
+
             case 'paper':
                 setTheme({
                     'color-background': '#F8F6F1',
                     'color-text-pri': '#4C432E',
                     'color-text-acc': '#AA9A73'
+                });
+                return;
+
+            case 'empire':
+                setTheme({
+                    'color-background': '#301934',
+                    'color-text-pri': '#e5e4e2',
+                    'color-text-acc': '#ffd700'
                 });
                 return;
 
