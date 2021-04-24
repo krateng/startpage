@@ -27,13 +27,13 @@
             <div id="modal-theme">
 								 <section id="themes">
 								 <script type="text/handlebars-template" id="themes-template">
-								 		{{#themes}}
+								 		{{#each themes}}
 								 		<button
-											data-theme="{{identifier}}"
-											class="theme-button theme-{{identifier}}"
-											style="background-color:{{background}}; border-color:{{accent}}; color:{{main}};"
-											onclick="setThemeTo('{{identifier}}')">{{identifier}}</button>
-										{{/themes}}
+											data-theme="{{@key}}"
+											class="theme-button theme-{{@key}}"
+											style="background-color:{{this.background}}; border-color:{{this.accent}}; color:{{this.main}};"
+											onclick="setThemeTo('{{@key}}')">{{@key}}</button>
+										{{/each}}
 								 </script>
 							 </section>
             </div>

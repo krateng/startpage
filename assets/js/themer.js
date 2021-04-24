@@ -34,14 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function setThemeTo(identifier) {
-	for (var themeoption of loadeddata['themes']) {
-		if (identifier == themeoption['identifier']) {
 			setTheme({
-					'color-background': themeoption['background'],
-					'color-text-pri': themeoption['main'],
-					'color-text-acc': themeoption['accent']
+					'color-background': loadeddata.themes[identifier]['background'],
+					'color-text-pri': loadeddata.themes[identifier]['main'],
+					'color-text-acc': loadeddata.themes[identifier]['accent']
 			});
-			break;
-		}
-	}
+
 }
