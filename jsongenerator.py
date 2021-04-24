@@ -31,7 +31,8 @@ def convert_bookmarks(data):
 configs = [
 	('themes',convert_themes),
 	('bookmarks',convert_bookmarks),
-	('services',convert_services)
+	('services',convert_services),
+	('machines',convert_services)
 ]
 
 

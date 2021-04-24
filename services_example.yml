@@ -10,15 +10,3 @@
 - name: Bitwarden
   icon: lock
   url: bitwarden.example.ch
-- name: NAS
-  icon: nas
-  url: nas.example.ch
-- name: Pihole
-  icon: do-not-disturb
-  url: dns.example.ch
-- name: Proxmox Host
-  icon: server-network
-  url: proxmox.example.ch
-- name: Router
-  icon: router-network
-  url: router.example.ch

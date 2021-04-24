@@ -14,6 +14,7 @@ function fetchAndRender (name) {
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndRender('services');
+		fetchAndRender('machines');
     fetchAndRender('bookmarks');
 		fetchAndRender('themes');
 });

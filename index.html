@@ -73,6 +73,25 @@
             </script>
         </section>
 
+				<section id="machines">
+            <script type="text/handlebars-template" id="machines-template">
+            <h3>Machines</h3>
+            <div id="apps_loop">
+                {{#machines}}
+                    <div class="apps_item">
+                        <div class="apps_icon">
+                            <span class="iconify icon" data-icon="mdi-{{icon}}"></span>
+                        </div>
+                        <div class="apps_text">
+                            <a href="https://{{url}}">{{name}}</a>
+                            <span id="app-address">{{url}}</span>
+                        </div>
+                    </div>
+                {{/machines}}
+            </div>
+            </script>
+        </section>
+
          <section id="bookmarks">
             <script type="text/handlebars-template" id="bookmarks-template">
             <h3>Bookmarks</h3>
