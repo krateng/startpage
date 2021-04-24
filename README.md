@@ -24,6 +24,6 @@
  - Click the options button on the left bottom to change theme
 
 #### Server Configuration
-Add your services by editing `apps.yml`, your bookmarks in `bookmarks.yml` and custom color themes in `themes.yml`.
+Add your services by editing `services.yml`, your bookmarks in `bookmarks.yml` and custom color themes in `themes.yml`.
 
 Find the names  of icons to use at [Material Design Icons](https://materialdesignicons.com/)

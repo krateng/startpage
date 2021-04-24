@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setThemeTo(identifier) {
 	for (var themeoption of loadeddata['themes']) {
-		if (identifier == themeoption['name']) {
+		if (identifier == themeoption['identifier']) {
 			setTheme({
 					'color-background': themeoption['background'],
 					'color-text-pri': themeoption['main'],
