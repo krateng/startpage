@@ -13,7 +13,7 @@ function fetchAndRender (name) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchAndRender('apps');
+    fetchAndRender('services');
     fetchAndRender('bookmarks');
 		fetchAndRender('themes');
 });

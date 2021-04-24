@@ -1,0 +1,24 @@
+- name: Seafile
+  icon: cloud
+  url: seafile.example.ch
+- name: Maloja
+  icon: music-box-multiple-outline
+  url: maloja.example.ch
+- name: Lynx
+  icon: content-paste
+  url: paste.example.ch
+- name: Bitwarden
+  icon: lock
+  url: bitwarden.example.ch
+- name: NAS
+  icon: nas
+  url: nas.example.ch
+- name: Pihole
+  icon: do-not-disturb
+  url: dns.example.ch
+- name: Proxmox Host
+  icon: server-network
+  url: proxmox.example.ch
+- name: Router
+  icon: router-network
+  url: router.example.ch

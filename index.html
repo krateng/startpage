@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SUI</title>
+    <title>Startpage</title>
     <meta charset="utf-8">
     <meta http-equiv="Default-Style" content="">
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
@@ -54,11 +54,11 @@
             <h1 id="header_greet"></h1>
         </section>
 
-        <section id="apps">
-            <script type="text/handlebars-template" id="apps-template">
-            <h3>Applications</h3>
+        <section id="services">
+            <script type="text/handlebars-template" id="services-template">
+            <h3>Services</h3>
             <div id="apps_loop">
-                {{#apps}}
+                {{#services}}
                     <div class="apps_item">
                         <div class="apps_icon">
                             <span class="iconify icon" data-icon="mdi-{{icon}}"></span>
@@ -68,7 +68,7 @@
                             <span id="app-address">{{url}}</span>
                         </div>
                     </div>
-                {{/apps}}
+                {{/services}}
             </div>
             </script>
         </section>

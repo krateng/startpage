@@ -8,7 +8,7 @@ def list_to_mapping(input,key='identifier'):
 def mapping_to_list(input,key='identifier'):
 	return [{**input[k],key:k} for k in input]
 
-def convert_apps(data):
+def convert_services(data):
 	return data
 
 def convert_themes(data):
@@ -31,7 +31,7 @@ def convert_bookmarks(data):
 configs = [
 	('themes',convert_themes),
 	('bookmarks',convert_bookmarks),
-	('apps',convert_apps)
+	('services',convert_services)
 ]
 
 
