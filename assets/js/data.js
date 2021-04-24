@@ -1,20 +1,36 @@
 const loadeddata = {}
 
+function debug(data) {
+	 console.log(data)
+	 return data
+}
+
+function fetchRealOrExample(name) {
+	return fetch(name + '.yml')
+		.then(response => { if (response.status == 200) { return response } else { return fetch(name + '_example.yml') } })
+}
+
 function fetchAndRender (name) {
-    fetch(name + '.json')
-        .then(response => response.json())
+    fetchRealOrExample(name)
+				.then(response => response.text())
+        .then(rawyaml => YAML.parse(rawyaml))
+				.then(debug)
         .then(data => {
+						loadeddata[name] = data
+						renderdata = {}
+						renderdata[name] = data;
             const mysource = document.getElementById(name + '-template').innerHTML;
             const mytemplate = Handlebars.compile(mysource);
-            const myresult = mytemplate(data);
+            const myresult = mytemplate(renderdata);
             document.getElementById(name).innerHTML = myresult;
-						loadeddata[name] = data[name]
         });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchAndRender('services');
-		fetchAndRender('machines');
-    fetchAndRender('bookmarks');
-		fetchAndRender('themes');
+    fetchAndRender('links');
+		fetchAndRender('config');
+//	  fetchAndRender('services');
+//		fetchAndRender('machines');
+//    fetchAndRender('bookmarks');
+//		fetchAndRender('themes');
 });
