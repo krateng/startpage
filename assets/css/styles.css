@@ -195,7 +195,7 @@ table a{
 	z-index: 1;
 }
 
-#apps_loop{
+.apps_loop{
 	border-bottom: 0px solid var(--color-text-acc);
 	display: grid;
 	grid-column-gap: 0px;
@@ -245,7 +245,7 @@ table a{
 }
 
 
-#links_loop{
+.links_loop{
 	display: grid;
 	flex-wrap: nowrap;
 	grid-column-gap: 20px;
@@ -254,17 +254,17 @@ table a{
 	grid-template-rows: auto;
 }
 
-#links_item{
+.links_item{
 	line-height: 1.5rem;
 	margin-bottom: 2em;
 	webkit-font-smoothing: antialiased;
 }
 
-#links_item h4{
+.links_item h4{
 	color: var(--color-text-acc);
 }
 
-#links_item a{
+.links_item a{
 	display: block;
 	line-height: 2;
 }
@@ -407,12 +407,12 @@ table a{
 		width: 90%;
 	}
 
-	#apps_loop{
+	.apps_loop{
 		grid-template-columns: 1fr 1fr 1fr;
 		width: 100vw;
 	}
 
-	#links_loop	{
+	.links_loop	{
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 
@@ -458,7 +458,7 @@ table a{
 		font-size: 1em;
 	}
 
-	#apps_loop{
+	.apps_loop{
 		grid-column-gap: 0px;
 		grid-row-gap: 0px;
 		grid-template-columns: 1fr 1fr;
@@ -476,7 +476,7 @@ table a{
 		line-height: 2.5rem;
 	}
 
-	#links_loop{
+	.links_loop{
 		display: grid;
 		flex-wrap: nowrap;
 		grid-column-gap: 20px;

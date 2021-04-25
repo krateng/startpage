@@ -59,7 +59,7 @@
 				{{#links}}
 				<h3>{{title}}</h3>
 				{{#if icons}}
-				<div id="apps_loop">
+				<div class="apps_loop">
 						{{#entries}}
 								<div class="apps_item">
 										<div class="apps_icon">
@@ -73,9 +73,9 @@
 						{{/entries}}
 				</div>
 				{{else}}
-				<div id="links_loop">
+				<div class="links_loop">
 						{{#each entries}}
-								<div id="links_item">
+								<div class="links_item">
 										<h4>{{@key}}</h4>
 										{{#each this}}
 												<a href="{{this}}" class="theme_color-border theme_text-select">{{@key}}</a>
