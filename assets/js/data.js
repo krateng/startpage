@@ -14,7 +14,6 @@ function fetchAndRender (name) {
     fetchRealOrExample(name)
 				.then(response => response.text())
         .then(rawyaml => YAML.parse(rawyaml))
-				.then(debug)
         .then(data => {
 						loadeddata[name] = data
 						renderdata = {}
@@ -29,8 +28,4 @@ function fetchAndRender (name) {
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndRender('links');
 		fetchAndRender('themes');
-//	  fetchAndRender('services');
-//		fetchAndRender('machines');
-//    fetchAndRender('bookmarks');
-//		fetchAndRender('themes');
 });

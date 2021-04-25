@@ -7,7 +7,7 @@
     - name: Maloja
       icon: music-box-multiple-outline
       url: maloja.example.ch
-    - name: Lynx
+    - name: Linx
       icon: content-paste
       url: paste.example.ch
     - name: Bitwarden
