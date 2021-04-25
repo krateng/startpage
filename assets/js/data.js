@@ -10,11 +10,12 @@ function fetchRealOrExample(name) {
 		.then(response => { if (response.status == 200) { return response } else { return fetch(name + '_example.yml') } })
 }
 
-function fetchAndRender (name) {
+function fetchAndRender (name,postprocessor) {
     fetchRealOrExample(name)
 				.then(response => response.text())
         .then(rawyaml => YAML.parse(rawyaml))
         .then(data => {
+						data = postprocessor(data);
 						loadeddata[name] = data
 						renderdata = {}
 						renderdata[name] = data;
@@ -25,7 +26,38 @@ function fetchAndRender (name) {
         });
 }
 
+function getHost(url) {
+	return url.replace(/.*\/\//s,'').split('?')[0].split('/')[0]
+}
+
+function postprocess_links(data) {
+	for (var category of data) {
+		try {
+			for (var entry of category.entries) {
+				entry.domain = getHost(entry.url);
+			}
+		}
+		catch {
+			for (var bookmarkcategory in category.entries) {
+				var bookmarklist = []
+				for (var name in category.entries[bookmarkcategory]) {
+					var url = category.entries[bookmarkcategory][name]
+					bookmarkentry = {'name':name,'url':url, 'host':getHost(url)}
+					bookmarklist.push(bookmarkentry)
+				}
+				category.entries[bookmarkcategory] = bookmarklist
+			}
+		}
+
+
+	}
+	return data;
+}
+function postprocess_themes(data) {
+	return data;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    fetchAndRender('links');
-		fetchAndRender('themes');
+    fetchAndRender('links',postprocess_links);
+		fetchAndRender('themes',postprocess_themes);
 });

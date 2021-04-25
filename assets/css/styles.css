@@ -75,6 +75,13 @@ a{
 	text-decoration: none;
 }
 
+.links_loop a {
+	padding-left:18px;
+	background-repeat:no-repeat;
+	background-size: 12px 12px;
+	background-position: center left;
+}
+
 a:hover{
 	text-decoration: underline;
 	webkit-text-decoration-color: var(--color-text-acc);
