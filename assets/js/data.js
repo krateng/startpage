@@ -30,6 +30,9 @@ function getHost(url) {
 	return url.replace(/.*\/\//s,'').split('?')[0].split('/')[0]
 }
 
+const favicon_grabber = (domain) => `https://api.faviconkit.com/${domain}/144`
+//const favicon_grabber = (domain) => `https://favicons.githubusercontent.com/${domain}`
+
 function postprocess_links(data) {
 	for (var category of data) {
 		try {
@@ -42,7 +45,7 @@ function postprocess_links(data) {
 				var bookmarklist = []
 				for (var name in category.entries[bookmarkcategory]) {
 					var url = category.entries[bookmarkcategory][name]
-					bookmarkentry = {'name':name,'url':url, 'host':getHost(url)}
+					bookmarkentry = {'name':name,'url':url, 'host':getHost(url), 'favicon':favicon_grabber(getHost(url))}
 					bookmarklist.push(bookmarkentry)
 				}
 				category.entries[bookmarkcategory] = bookmarklist
