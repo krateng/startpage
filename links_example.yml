@@ -15,13 +15,16 @@
       url: bitwarden.example.ch
 - icons: true
   title: Machines
+  ssl: false
   entries:
     - name: NAS
       icon: nas
       url: nas.example.ch
+      port: 5000
     - name: Pihole
       icon: do-not-disturb
       url: dns.example.ch
+      path: admin
     - name: Proxmox Host
       icon: server-network
       url: proxmox.example.ch

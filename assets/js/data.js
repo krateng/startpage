@@ -35,9 +35,10 @@ const favicon_grabber = (domain) => `https://api.faviconkit.com/${domain}/144`
 
 function postprocess_links(data) {
 	for (var category of data) {
+		if (!category.hasOwnProperty('ssl')) { category.ssl = true };
 		try {
 			for (var entry of category.entries) {
-				entry.domain = getHost(entry.url);
+				entry.host = getHost(entry.url);
 			}
 		}
 		catch {
