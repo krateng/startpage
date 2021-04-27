@@ -82,11 +82,18 @@ function save(data,name) {
 	return data
 }
 
+function set_theme(data,name) {
+	if (loadeddata.hasOwnProperty('config') && loadeddata.hasOwnProperty('themes')) {
+		setThemeTo(loadeddata.config.theme);
+	}
+
+}
+
 
 data_files = [
 	["links", preprocess_links, render],
-	["themes", save],
-	["config", save]
+	["themes", save, set_theme],
+	["config", save, set_theme] // do it for both, whichever finishes last does it for real
 ]
 
 document.addEventListener('DOMContentLoaded', () => {
