@@ -27,7 +27,7 @@ function fetchAndRender (name,postprocessor) {
 }
 
 function getHost(url) {
-	return url.replace(/.*\/\//s,'').split('?')[0].split('/')[0]
+	return url.replace(/.*\/\//s,'').split(':')[0].split('?')[0].split('/')[0]
 }
 
 const favicon_grabber = (domain) => `https://api.faviconkit.com/${domain}/144`

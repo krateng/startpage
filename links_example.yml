@@ -3,34 +3,31 @@
   entries:
     - name: Seafile
       icon: cloud
-      url: seafile.example.ch
+      url: https://seafile.example.ch
     - name: Maloja
       icon: music-box-multiple-outline
-      url: maloja.example.ch
+      url: https://maloja.example.ch
     - name: Linx
       icon: content-paste
-      url: paste.example.ch
+      url: https://paste.example.ch
     - name: Bitwarden
       icon: lock
-      url: bitwarden.example.ch
+      url: https://bitwarden.example.ch
 - icons: true
   title: Machines
-  ssl: false
   entries:
     - name: NAS
       icon: nas
-      url: nas.example.ch
-      port: 5000
+      url: http://nas.example.ch:5000
     - name: Pihole
       icon: do-not-disturb
-      url: dns.example.ch
-      path: admin
+      url: http://dns.example.ch/admin
     - name: Proxmox Host
       icon: server-network
-      url: proxmox.example.ch
+      url: http://proxmox.example.ch
     - name: Router
       icon: router-network
-      url: router.example.ch
+      url: http://router.example.ch
 - icons: false
   title: Bookmarks
   entries:
