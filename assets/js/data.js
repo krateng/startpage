@@ -1,6 +1,6 @@
 const loadeddata = {}
 
-function debug(data) {
+function debug(data,name) {
 	 console.log(data)
 	 return data
 }
@@ -10,20 +10,28 @@ function fetchRealOrExample(name) {
 		.then(response => { if (response.status == 200) { return response } else { return fetch(name + '_example.yml') } })
 }
 
-function fetchAndRender (name,postprocessor) {
-    fetchRealOrExample(name)
-				.then(response => response.text())
-        .then(rawyaml => YAML.parse(rawyaml))
-        .then(data => {
-						data = postprocessor(data);
-						loadeddata[name] = data
-						renderdata = {}
-						renderdata[name] = data;
-            const mysource = document.getElementById(name + '-template').innerHTML;
-            const mytemplate = Handlebars.compile(mysource);
-            const myresult = mytemplate(renderdata);
-            document.getElementById(name).innerHTML = myresult;
-        });
+
+function fetchAndProcess(name,steps) {
+	fetchRealOrExample(name)
+		.then(response => response.text())
+		.then(rawyaml => YAML.parse(rawyaml))
+		.then(data => {
+			for (var step of steps) {
+				console.log('performing step',step,'on',data);
+				data = step(data,name);
+			}
+		})
+}
+
+
+function render(data,name) {
+	renderdata = {};
+	renderdata[name] = data;
+	const mysource = document.getElementById(name + '-template').innerHTML;
+	const mytemplate = Handlebars.compile(mysource);
+	const myresult = mytemplate(renderdata);
+	document.getElementById(name).innerHTML = myresult;
+	return data
 }
 
 function getHost(url) {
@@ -33,7 +41,7 @@ function getHost(url) {
 const favicon_grabber = (domain) => `https://api.faviconkit.com/${domain}/144`
 //const favicon_grabber = (domain) => `https://favicons.githubusercontent.com/${domain}`
 
-function postprocess_links(data) {
+function preprocess_links(data,name) {
 	for (var category of data) {
 		if (!category.hasOwnProperty('ssl')) { category.ssl = true };
 		try {
@@ -57,11 +65,24 @@ function postprocess_links(data) {
 	}
 	return data;
 }
-function postprocess_themes(data) {
-	return data;
+
+function save(data,name) {
+	loadeddata[name] = data;
+	return data
 }
 
+
+data_files = [
+	["links", preprocess_links, render],
+	["themes", save],
+	["config", save]
+]
+
 document.addEventListener('DOMContentLoaded', () => {
-    fetchAndRender('links',postprocess_links);
-		fetchAndRender('themes',postprocess_themes);
+	for (var i of data_files) {
+		i.reverse()
+		var name = i.pop();
+		var instructions = i.reverse();
+		fetchAndProcess(name,instructions)
+	}
 });
