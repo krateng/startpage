@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setValueFromLocalStorage('color-background');
     setValueFromLocalStorage('color-text-pri');
     setValueFromLocalStorage('color-text-acc');
+		setValueFromLocalStorage('font');
 });
 
 
@@ -37,7 +38,8 @@ function setThemeTo(identifier) {
 			setTheme({
 					'color-background': loadeddata.themes[identifier]['background'],
 					'color-text-pri': loadeddata.themes[identifier]['main'],
-					'color-text-acc': loadeddata.themes[identifier]['accent']
+					'color-text-acc': loadeddata.themes[identifier]['accent'],
+					'font': loadeddata.themes[identifier]['font']
 			});
 
 }

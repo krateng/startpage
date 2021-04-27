@@ -46,3 +46,4 @@ empire:
   background: '#301934'
   main: '#e5e4e2'
   accent: '#ffd700'
+  font: 'Imperial'

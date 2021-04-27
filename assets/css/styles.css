@@ -9,7 +9,7 @@ html,
 body{
 	background-color: var(--color-background);
 	color: var(--color-text-pri);
-	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, sans-serif;
+	font-family: var(--font);
 	font-size: 14px;
 	font-weight: 400;
 	height: auto;
