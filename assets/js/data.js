@@ -5,25 +5,39 @@ function debug(data,name) {
 	 return data
 }
 
+// fetches file or its example version
 function fetchRealOrExample(name) {
 	return fetch(name + '.yml')
 		.then(response => { if (response.status == 200) { return response } else { return fetch(name + '_example.yml') } })
 }
 
-
+// fetches YAML files, parses it, then applies processing steps synchronously
 function fetchAndProcess(name,steps) {
 	fetchRealOrExample(name)
 		.then(response => response.text())
 		.then(rawyaml => YAML.parse(rawyaml))
 		.then(data => {
 			for (var step of steps) {
-				console.log('performing step',step,'on',data);
 				data = step(data,name);
 			}
 		})
 }
 
 
+
+// helper functions
+function getHost(url) {
+	return url.replace(/.*\/\//s,'').split(':')[0].split('?')[0].split('/')[0];
+}
+
+const favicon_grabber = (domain => `https://api.faviconkit.com/${domain}/144`)
+//const favicon_grabber = (domain => `https://favicons.githubusercontent.com/${domain}`)
+
+
+
+
+
+// renders data in the appropriate template
 function render(data,name) {
 	renderdata = {};
 	renderdata[name] = data;
@@ -34,13 +48,9 @@ function render(data,name) {
 	return data
 }
 
-function getHost(url) {
-	return url.replace(/.*\/\//s,'').split(':')[0].split('?')[0].split('/')[0]
-}
 
-const favicon_grabber = (domain) => `https://api.faviconkit.com/${domain}/144`
-//const favicon_grabber = (domain) => `https://favicons.githubusercontent.com/${domain}`
 
+// makes template rendering simpler by preparing link data
 function preprocess_links(data,name) {
 	for (var category of data) {
 		if (!category.hasOwnProperty('ssl')) { category.ssl = true };
@@ -66,6 +76,7 @@ function preprocess_links(data,name) {
 	return data;
 }
 
+// saves data in javascript for later access
 function save(data,name) {
 	loadeddata[name] = data;
 	return data
@@ -79,10 +90,8 @@ data_files = [
 ]
 
 document.addEventListener('DOMContentLoaded', () => {
-	for (var i of data_files) {
-		i.reverse()
-		var name = i.pop();
-		var instructions = i.reverse();
+	for (var instructions of data_files) {
+		var name = instructions.splice(0,1);
 		fetchAndProcess(name,instructions)
 	}
 });
