@@ -278,7 +278,10 @@ table a{
 
 
 
-
+span.theme_icon svg {
+	border-radius: 50%;
+	cursor: pointer;
+}
 
 
 

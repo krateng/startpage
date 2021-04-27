@@ -92,7 +92,7 @@ function set_theme(data,name) {
 
 data_files = [
 	["links", preprocess_links, render],
-	["themes", save, set_theme],
+	["themes", save, render, set_theme],
 	["config", save, set_theme] // do it for both, whichever finishes last does it for real
 ]
 

@@ -14,35 +14,6 @@
 
 <body onload="loadFunctions()">
 
-    <section id="modal">
-        <div>
-            <header id="modal-header">
-                <h1>Options</h1>
-                <a href="#" title="Close" class="modal-close">
-                    <span class="iconify" data-icon="mdi-close"></span>
-                </a>
-            </header>
-
-            <h2>Color themes</h2>
-
-            <div id="modal-theme">
-								 <section id="themes">
-								 <script type="text/handlebars-template" id="themes-template">
-								 		{{#each themes}}
-								 		<button
-											data-theme="{{@key}}"
-											class="theme-button theme-{{@key}}"
-											style="background-color:{{this.background}}; border-color:{{this.accent}}; color:{{this.main}};"
-											onclick="setThemeTo('{{@key}}')">{{@key}}</button>
-										{{/each}}
-								 </script>
-							 </section>
-            </div>
-
-
-
-        </div>
-    </section>
 
     <main id="container" class="fade">
 
@@ -94,11 +65,29 @@
 
     </main>
 
-    <div id="modal_init">
-        <a class="btn" href="#modal">
-            <span class="iconify icon" data-icon="mdi-xbox-controller-menu"></span>
-        </a>
-    </div>
+		<section id="themes" style="display:none;">
+			<script type="text/handlebars-template" id="themes-template">
+				 {{#each themes}}
+
+
+
+			         <span class="btn theme_icon" title="{{@key}}">
+			             <span class="iconify icon" data-icon="mdi-palette"
+									 data-theme="{{@key}}"
+									 class="theme-button theme-{{@key}}"
+									 style="background-color:{{this.background}}; border-color:{{this.accent}}; color:{{this.main}};"
+
+									 onclick="setThemeTo('{{@key}}')"
+									 >
+									 </span>
+			         </span>
+
+				 {{/each}}
+
+
+			</script>
+
+		</section>
 
 		<script src="./assets/js/yaml.min.js" type="text/javascript"></script>
     <script src="./assets/js/data.js" type="text/javascript"></script>
