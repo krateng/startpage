@@ -53,7 +53,6 @@ function render(data,name) {
 // makes template rendering simpler by preparing link data
 function preprocess_links(data,name) {
 	for (var category of data) {
-		if (!category.hasOwnProperty('ssl')) { category.ssl = true };
 		try {
 			for (var entry of category.entries) {
 				entry.host = getHost(entry.url);

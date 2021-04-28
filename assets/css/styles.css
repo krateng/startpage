@@ -208,7 +208,7 @@ table a{
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 64px;
+	grid-template-rows: 48px;
 	padding-bottom: var(--module-spacing);
 }
 
@@ -263,7 +263,7 @@ table a{
 
 .links_item{
 	line-height: 1.5rem;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	webkit-font-smoothing: antialiased;
 }
 
@@ -273,7 +273,7 @@ table a{
 
 .links_item a{
 	display: block;
-	line-height: 2;
+	line-height: 1.6;
 }
 
 

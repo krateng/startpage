@@ -19,9 +19,10 @@ const setTheme = options => {
     for (let option of Object.keys(options)) {
         const property = option;
         const value = options[option];
-
-        setValue(property, value);
-        localStorage.setItem(property, value);
+				if (value) {
+	        setValue(property, value);
+	        localStorage.setItem(property, value);
+				}
     }
 }
 
