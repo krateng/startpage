@@ -185,7 +185,8 @@ table a{
 	display: grid;
 	grid-column-gap: 20px;
 	grid-row-gap: 3vh;
-	grid-template-columns: 1fr;
+	
+	-columns: 1fr;
 	grid-template-rows: 8vh auto;
 	justify-items: stretch;
 	margin-left: auto;
@@ -217,7 +218,6 @@ table a{
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 48px;
 	padding-bottom: var(--module-spacing);
 }
 
@@ -236,7 +236,7 @@ table a{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	height: 64px;
+	height: 48px;
 	margin: 0;
 }
 
