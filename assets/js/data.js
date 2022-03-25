@@ -7,8 +7,8 @@ function debug(data,name) {
 
 // fetches file or its example version
 function fetchRealOrExample(name) {
-	return fetch(name + '.yml')
-		.then(response => { if (response.status == 200) { return response } else { return fetch(name + '_example.yml') } })
+	return fetch('userdata/' + name + '.yml')
+		.then(response => { if (response.status == 200) { return response } else { return fetch('exampledata/' + name + '.yml') } })
 }
 
 // fetches YAML files, parses it, then applies processing steps synchronously
