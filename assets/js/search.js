@@ -36,7 +36,7 @@ function search(text) {
         else
             window.location = "https://" + text;
     } else {
-        window.location = "https://duckduckgo.com/?q=" + text;
+        window.location = "https://yandex.com/search/?lang=en&text=" + text;
     }
 }
 
